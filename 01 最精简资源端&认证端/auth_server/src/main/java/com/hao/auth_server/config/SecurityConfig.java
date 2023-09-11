@@ -34,16 +34,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private ClientDetailsService clientDetailsService;
 
-    public AuthorizationServerTokenServices tokenServices() {
-        DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
-        defaultTokenServices.setTokenStore(tokenStore);
-        defaultTokenServices.setClientDetailsService(clientDetailsService);
-        defaultTokenServices.setSupportRefreshToken(true);
-        defaultTokenServices.setAccessTokenValiditySeconds(60*60*2);
-        defaultTokenServices.setRefreshTokenValiditySeconds(60*60*24);
-        return defaultTokenServices;
-    }
-
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

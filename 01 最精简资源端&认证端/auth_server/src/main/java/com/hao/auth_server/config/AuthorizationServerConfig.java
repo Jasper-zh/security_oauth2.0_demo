@@ -27,7 +27,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .withClient("auth_demo")
                 .secret(passwordEncoder.encode("123456"))
                 .accessTokenValiditySeconds(3600)
-                .redirectUris("http://localhost:9999/info")
+                .redirectUris("https://www.baidu.com")
                 .scopes("all")
                 .authorizedGrantTypes("authorization_code")
                 .and()
