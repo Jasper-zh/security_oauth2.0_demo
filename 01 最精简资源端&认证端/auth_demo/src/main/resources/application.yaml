@@ -1,3 +1,13 @@
 server:
   port: 9999
 
+security:
+  oauth2:
+    client:
+      client-id: auth_demo
+      client-secret: 123456
+      scope: all
+    resource:
+      loadBalanced: true
+      token-info-uri: http://localhost:9998/oauth/check_token
+
